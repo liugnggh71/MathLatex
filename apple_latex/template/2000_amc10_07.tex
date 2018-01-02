@@ -1,0 +1,36 @@
+
+In rectangle $ABCD$, $AD=1$, $P$ is on $\overline{AB}$, and $\overline{DB}$ and $\overline{DP}$ trisect $\angle ADC$. What is the perimeter of $\triangle BDP$?
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+import "./olympiad.asy" as olympiad;
+size(0,120);
+draw((0,2)--(3.4,2)--(3.4,0)--(0,0)--cycle); draw((0,0)--(1.3,2)); draw((0,0)--(3.4,2)); dot((0,0)); dot((0,2)); dot((3.4,2)); dot((3.4,0)); dot((1.3,2)); label("$A$",(0,2),NW); label("$B$",(3.4,2),NE); label("$C$",(3.4,0),SE); label("$D$",(0,0),SW); label("$P$",(1.3,2),N); 
+\end{asy}
+\end{figure}
+$\mathrm{(A)}\ 3+\frac{\sqrt{3}}{3} \qquad\mathrm{(B)}\ 2+\frac{4\sqrt{3}}{3} \qquad\mathrm{(C)}\ 2+2\sqrt{2} \qquad\mathrm{(D)}\ \frac{3+3\sqrt{5}}{2} \qquad\mathrm{(E)}\ 2+\frac{5\sqrt{3}}{3}$
+\\
+Solution
+\\
+\begin{figure}[H]
+\centering
+\begin{asy}
+import "./olympiad.asy" as olympiad;
+size(0,120);
+draw((0,2)--(3.4,2)--(3.4,0)--(0,0)--cycle); draw((0,0)--(1.3,2)); draw((0,0)--(3.4,2)); dot((0,0)); dot((0,2)); dot((3.4,2)); dot((3.4,0)); dot((1.3,2)); label("$A$",(0,2),NW); label("$B$",(3.4,2),NE); label("$C$",(3.4,0),SE); label("$D$",(0,0),SW); label("$P$",(1.3,2),N); label("$1$",(0,1),W); label("$2$",(1.7,1),SE); label("$\frac{\sqrt{3}}{3}$",(0.65,2),N); label("$\frac{2\sqrt{3}}{3}$",(0.85,1),NW); label("$\frac{2\sqrt{3}}{3}$",(2.35,2),N); 
+\end{asy}
+\end{figure}
+$AD=1$.
+
+Since $\angle ADC$ is trisected, $\angle ADP= \angle PDB= \angle BDC=30^\circ$.
+
+Thus, $PD=\frac{2\sqrt{3}}{3}$
+
+$DB=2$
+
+$BP=\sqrt{3}-\frac{\sqrt{3}}{3}=\frac{2\sqrt{3}}{3}$.
+
+Adding, we get $2+\frac{4\sqrt{3}}{3}$
+
+$\boxed{\text{B}}$

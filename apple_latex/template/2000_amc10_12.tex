@@ -1,0 +1,70 @@
+
+Figures $0$, $1$, $2$, and $3$ consist of $1$, $5$, $13$, and $25$ nonoverlapping unit squares, respectively. If the pattern were continued, how many nonoverlapping unit squares would there be in figure 100?
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+import "./olympiad.asy" as olympiad;
+unitsize(8); draw((0,0)--(1,0)--(1,1)--(0,1)--cycle); draw((9,0)--(10,0)--(10,3)--(9,3)--cycle); draw((8,1)--(11,1)--(11,2)--(8,2)--cycle); draw((19,0)--(20,0)--(20,5)--(19,5)--cycle); draw((18,1)--(21,1)--(21,4)--(18,4)--cycle); draw((17,2)--(22,2)--(22,3)--(17,3)--cycle); draw((32,0)--(33,0)--(33,7)--(32,7)--cycle); draw((29,3)--(36,3)--(36,4)--(29,4)--cycle); draw((31,1)--(34,1)--(34,6)--(31,6)--cycle); draw((30,2)--(35,2)--(35,5)--(30,5)--cycle); label("Figure",(0.5,-1),S); label("$0$",(0.5,-2.5),S); label("Figure",(9.5,-1),S); label("$1$",(9.5,-2.5),S); label("Figure",(19.5,-1),S); label("$2$",(19.5,-2.5),S); label("Figure",(32.5,-1),S); label("$3$",(32.5,-2.5),S); 
+\end{asy}
+\end{figure}
+
+$\mathrm{(A)}\ 10401 \qquad\mathrm{(B)}\ 19801 \qquad\mathrm{(C)}\ 20201 \qquad\mathrm{(D)}\ 39801 \qquad\mathrm{(E)}\ 40801$
+\\
+Solution 1
+\\
+We have a recursion:
+
+$A_n=A_{n-1}+4n$.
+
+I.E. we add increasing multiples of $4$ each time we go up a figure.
+
+So, to go from Figure 0 to 100, we add
+
+$4 \cdot 1+4 \cdot 2+...+4 \cdot 99+4\cdot 100=4 \cdot 5050=20200$.
+
+We then add $20200$ to the number of squares in Figure 0 to get $20201$, which is choice $\boxed{\text{C}}$
+\\
+Solution 2
+\\
+We can divide up figure $n$ to get the sum of the sum of the first $n+1$ odd numbers and the sum of the first $n$ odd numbers. If you do not see this, here is the example for $n=3$:
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+import "./olympiad.asy" as olympiad;
+size(0,120);
+draw((3,0)--(4,0)--(4,7)--(3,7)--cycle); draw((0,3)--(7,3)--(7,4)--(0,4)--cycle); draw((2,1)--(5,1)--(5,6)--(2,6)--cycle); draw((1,2)--(6,2)--(6,5)--(1,5)--cycle); draw((3,0)--(3,7),linewidth(1.5)); 
+\end{asy}
+\end{figure}
+The sum of the first $n$ odd numbers is $n^2$, so for figure $n$, there are $(n+1)^2+n^2$ unit squares. We plug in $n=100$ to get $20201$, which is choice $\boxed{\text{C}}$
+\\
+Solution 3
+\\
+Using the recursion from solution 1, we see that the first differences of $4, 8, 12, ...$ form an arithmetic progression, and consequently that the second differences are constant and all equal to $4$. Thus, the original sequence can be generated from a quadratic function.
+
+If $f(n) = an^2 + bn + c$, and $f(0) = 1$, $f(1) = 5$, and $f(2) = 13$, we get a system of three equations in three variables:
+
+$f(0) = 0$ gives $c = 1$
+
+$f(1) = 5$ gives $a + b + c = 5$
+
+$f(2) = 13$ gives $4a + 2b + c = 13$
+
+Plugging in $c=1$ into the last two equations gives
+
+$a + b = 4$
+
+$4a + 2b = 12$
+
+Dividing the second equation by 2 gives the system:
+
+$a + b = 4$
+
+$2a + b = 6$
+
+Subtracting the first equation from the second gives $a = 2$, and hence $b = 2$. Thus, our quadratic function is:
+
+$f(n) = 2n^2 + 2n + 1$
+
+Calculating the answer to our problem, $f(100) = 20000 + 200 + 1 = 20201$, which is choice $\boxed{\text{C}}$

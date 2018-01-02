@@ -1,0 +1,29 @@
+#!/bin/sh
+export mydir=$(basename $PWD)
+cp ${mydir}.tex    ${mydir}_solution.tex
+cp ${mydir}_01.tex ${mydir}_01_s.tex
+cp ${mydir}_02.tex ${mydir}_02_s.tex
+cp ${mydir}_03.tex ${mydir}_03_s.tex
+cp ${mydir}_04.tex ${mydir}_04_s.tex
+cp ${mydir}_05.tex ${mydir}_05_s.tex
+cp ${mydir}_06.tex ${mydir}_06_s.tex
+cp ${mydir}_07.tex ${mydir}_07_s.tex
+cp ${mydir}_08.tex ${mydir}_08_s.tex
+cp ${mydir}_09.tex ${mydir}_09_s.tex
+cp ${mydir}_10.tex ${mydir}_10_s.tex
+cp ${mydir}_11.tex ${mydir}_11_s.tex
+cp ${mydir}_12.tex ${mydir}_12_s.tex
+cp ${mydir}_13.tex ${mydir}_13_s.tex
+cp ${mydir}_14.tex ${mydir}_14_s.tex
+cp ${mydir}_15.tex ${mydir}_15_s.tex
+cp ${mydir}_16.tex ${mydir}_16_s.tex
+cp ${mydir}_17.tex ${mydir}_17_s.tex
+cp ${mydir}_18.tex ${mydir}_18_s.tex
+cp ${mydir}_19.tex ${mydir}_19_s.tex
+cp ${mydir}_20.tex ${mydir}_20_s.tex
+cp ${mydir}_21.tex ${mydir}_21_s.tex
+cp ${mydir}_22.tex ${mydir}_22_s.tex
+cp ${mydir}_23.tex ${mydir}_23_s.tex
+cp ${mydir}_24.tex ${mydir}_24_s.tex
+cp ${mydir}_25.tex ${mydir}_25_s.tex
+sed -i -e '21,47 s/}$/_s}/' ${mydir}_solution.tex

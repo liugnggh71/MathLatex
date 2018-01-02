@@ -1,0 +1,32 @@
+
+Points $M$ and $N$ are the midpoints of sides $PA$ and $PB$ of $\triangle PAB$. As $P$ moves along a line that is parallel to side $AB$, how many of the four quantities listed below change?
+
+(a) the length of the segment $MN$
+
+(b) the perimeter of $\triangle PAB$
+
+(c) the area of $\triangle PAB$
+
+(d) the area of trapezoid $ABNM$
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+import "./olympiad.asy" as olympiad;
+size(0,120);
+draw((2,0)--(8,0)--(6,4)--cycle); draw((4,2)--(7,2)); draw((1,4)--(9,4),Arrows); label("$A$",(2,0),SW); label("$B$",(8,0),SE); label("$M$",(4,2),W); label("$N$",(7,2),E); label("$P$",(6,4),N); 
+\end{asy}
+\end{figure}
+$\mathrm{(A)}\ 0 \qquad\mathrm{(B)}\ 1 \qquad\mathrm{(C)}\ 2 \qquad\mathrm{(D)}\ 3 \qquad\mathrm{(E)}\ 4$
+\\
+Solution
+\\
+(a) Clearly $AB$ does not change, and $MN=\frac{1}{2}AB$, so $MN$ doesn't change either.
+
+(b) Obviously, the perimeter changes.
+
+(c) The area clearly doesn't change, as both the base $AB$ and its corresponding height remain the same.
+
+(d) The bases $AB$ and $MN$ do not change, and neither does the height, so the area of the trapezoid remains the same.
+
+Only $1$ quantity changes, so the correct answer is $\boxed{\text{B}}$.
